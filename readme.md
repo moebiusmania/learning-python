@@ -10,13 +10,25 @@ I already had to get my hands dirty with Python in the last months, so I think i
 
 Also I would like to start playing a bit with LLMs and related stuff on my local machine, and that's mostly Python ground.
 
-## Setting up the environment
+## Setting up the global environment
 
-- installed `pyenv` with `brew`
-- installed latest `python` with `pyenv`
-- set latest `python` as global default
+- install `pyenv` with `brew`
+- install latest `python` with `pyenv`
+- set latest `python` as global default with `pyenv global <version>`
   - in case it doesn't work, adding `eval "$(pyenv init -)"` to `.zshrc` has helped
 - checked its working with `$ python --version`
+
+## Setting up the local environment
+- set a `python` version as local default with `$ pyenv local <version>`
+- `$ python -m venv .venv` create local virtual env
+- `$ source .venv/bin/activate` activate the virtual env
+  - `$ deactivate` to leave the virtual env
+- checked its working with `$ python --version`
+
+## Managing dependencies
+
+- install existing dependencies with `$ pip install -r requirements.txt`
+- update dependencies with `$ pip freeze > requirements.txt`
 
 ## How to run the projects
 
@@ -31,6 +43,14 @@ run the script
 ```bash
 $ python <script>.py
 ```
+
+## Some useful libraries
+
+- pytest - testing
+- ruff - format + linter
+- ipython - interactive shell
+- ipdb - debugger
+- litestar - web framework api
 
 ## License
 
